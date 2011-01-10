@@ -1,3 +1,7 @@
+= READ THIS!!!!
+
+This fork exists as a personal hack of the original gem. It makes the current tab as a link by default. If you want to use it maybe you should be using the original gem which, in everything else, looks amazing to me :)
+
 = Tabs on Rails
 
 *TabsOnRails* is a simple Rails plugin for creating tabs and navigation menus.
