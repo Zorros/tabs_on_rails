@@ -44,9 +44,10 @@ module TabsOnRails
       #
       # Implements Builder#tab_for.
       #
-      def tab_for(tab, name, options, item_options = {})
+      def tab_for(tab, name, options, item_options = { :link_current => true })
+        link_current = item_options.delete(:link_current) {false}
         item_options[:class] = item_options[:class].to_s.split(" ").push("current").join(" ") if current_tab?(tab)
-        content = @context.link_to_unless(current_tab?(tab), name, options) do
+        content = @context.link_to_unless((current_tab?(tab) && !link_current ), name, options) do
           @context.content_tag(:span, name)
         end
         @context.content_tag(:li, content, item_options)
